@@ -14,9 +14,9 @@ class CreateBloodsTable extends Migration
     public function up()
     {
         Schema::create('bloods', function (Blueprint $table) {
-            $table->foreign('blood_id')->references('blood_id')->on('user_blood_banks');
+            $table->integer('blood_id');
             $table->string('bloodType');
-            $table->foreign('type')->references('type')->on('blood_types');
+            $table->integer('type');
             $table->string('Quantity');
             $table->timestamps();
         });
