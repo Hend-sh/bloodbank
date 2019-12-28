@@ -1,11 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+<br><br>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register to the website') }}</div>
+                <div class="card-header text-white" style=" background: darkred !important">{{ __('to the ') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -53,78 +54,9 @@
                                 </div>
                             </div>
 
-                       
-            
-                        <div class="form-group row">
-                            <label for="Blood type" class="col-md-4 col-form-label text-md-right">{{ __('Blood type') }}</label>
-
-                            <div class="col-md-6">
-                                <select name="blood type">
-                                    <option > A+ </option>
-                                    <option>  A- </option>
-                                    <option>  B+ </option>
-                                    <option>  B- </option> 
-                                    <option>  O+ </option>
-                                    <option>  O- </option>
-                                    <option>  AB+ </option>
-                                    <option>  AB- </option>
-                                    
-                                </select>
-                                @error('blood type')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
                         
+                                 
                         <div class="form-group row">
-                                <label for="Location" class="col-md-4 col-form-label text-md-right">{{ __('Location') }}</label>
-    
-                                <div class="col-md-6">
-                                    <input id="Location" type="password" class="form-control" name="Location"  autocomplete="new-password">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                    <label for="Gender" class="col-md-4 col-form-label text-md-right">{{ __('Gender') }}</label>
-        
-                                    <div class="col-md-6">
-                                        <input  type="radio"  name="Gendar" value = " " autocomplete="Gendar"> male
-                                        <input  type="radio"  name="Gendar" value ="" autocomplete="Gendar"> female
-                                        
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                        <label for="Date of birth" class="col-md-4 col-form-label text-md-right">{{ __('Date of birth') }}</label>
-            
-                                        <div class="col-md-6">
-                                            <input id="Date of birth" type="date" class="form-control @error('Date of birth') is-invalid @enderror" name="Date of birth"  autocomplete="new-password" autofocus>
-            
-                                            @error('Date of birth')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                            <label for="Date of last donat" class="col-md-4 col-form-label text-md-right">{{ __('Date of last donat') }}</label>
-                
-                                            <div class="col-md-6">
-                                                <input id="Date of last donat" type="date" class="form-control @error('Date of last donat') is-invalid @enderror" name="Date of last donat"  autocomplete="Date of last donat">
-                
-                                                @error('Date of last donat')
-                                                    <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $message }}</strong>
-                                                    </span>
-                                                @enderror
-                                            </div>
-                                        </div>
-                                    
-                                    <div class="form-group row">
                                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
                 
                                             <div class="col-md-6">
@@ -137,7 +69,9 @@
                                                 @enderror
                                             </div>
                                         </div>
-                                        
+
+                                    </div>
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-secondary">

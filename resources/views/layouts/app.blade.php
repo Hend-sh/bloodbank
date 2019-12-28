@@ -9,7 +9,7 @@
      </head>
      
   
-  <body style="background-color:darkred;">
+  <body style="background-color:#F8F8FF;">
   
   
     <nav style=" background: darkred !important" class="navbar navbar-expand-lg navbar-dark bg-dark ">

@@ -17,9 +17,9 @@ class CreateUserBloodBanksTable extends Migration
             $table->bigIncrements('blood_id');
             $table->string('blood_bank_name');
             $table->boolean('active')->default(0); 
-            $table->integer('city_number')->references('cityNum')->on('cities');
+            $table->integer('city_number');
             $table->string('location');           
-            $table->foreign('user_id')->references('id')->on('users');            
+            $table->integer('user_id');            
             $table->timestamps();
         });
     }
