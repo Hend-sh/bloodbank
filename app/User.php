@@ -9,9 +9,15 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
     use Notifiable;
+<<<<<<< HEAD
   public function donors()
     {
         return $this->hasOne('App\donors');
+=======
+    public function UserBloodBank()
+    {
+        return $this->hasOne('App\UserBloodBank');
+>>>>>>> bdfca2858d014b1e847b4e6975a9e986a3a7f8c7
     }
     /**
      * The attributes that are mass assignable.

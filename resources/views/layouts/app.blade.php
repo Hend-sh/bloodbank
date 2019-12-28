@@ -20,11 +20,11 @@
   
       <div class="collapse navbar-collapse" id="navbarColor02">
             <ul class="navbar-nav mr-auto">
-              <li class="nav-item "> <a class="nav-link" href="index.php">Home </a></li>
+              <li class="nav-item "> <a class="nav-link" href="{{url('index')}}">Home </a></li>
               <li class="nav-item"> <a class="nav-link" href="blood_bank.php">blood bank</a> </li>
               <li class="nav-item"><a class="nav-link" href="Donor.php">Donors</a></li>
               <li class="nav-item"><a class="nav-link" href="contact-us.php">contuct us</a></li>
-              <li class="nav-item active"> <a class="nav-link" href="login.php">log in</a></li>
+              <li class="nav-item active"> <a class="nav-link" href="{{url('login')}}">log in</a></li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
               <input class="form-control mr-sm-2" type="text" placeholder="Search">
