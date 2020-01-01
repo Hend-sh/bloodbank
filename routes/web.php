@@ -22,3 +22,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::get('/donor','donorsController@show');
+
+Route::get('/vbloodbank','Vbloodbank@show');
+
+Route::get('/contact','contact@show');
