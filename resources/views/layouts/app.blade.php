@@ -9,7 +9,7 @@
      </head>
      
   
-  <body style="background-color:darkred;">
+  <body style="background-color:white;">
   
   
     <nav style=" background: darkred !important" class="navbar navbar-expand-lg navbar-dark bg-dark ">
@@ -20,9 +20,9 @@
   
       <div class="collapse navbar-collapse" id="navbarColor02">
             <ul class="navbar-nav mr-auto">
-              <li class="nav-item "> <a class="nav-link" href="index.php">Home </a></li>
+              <li class="nav-item "> <a class="nav-link" href="add.blade.php">Home </a></li>
               <li class="nav-item"> <a class="nav-link" href="blood_bank.php">blood bank</a> </li>
-              <li class="nav-item"><a class="nav-link" href="Donor.php">Donors</a></li>
+              <li class="nav-item"><a class="nav-link" href="Donor.blade.php">Donors</a></li>
               <li class="nav-item"><a class="nav-link" href="contact-us.php">contuct us</a></li>
               <li class="nav-item active"> <a class="nav-link" href="login.php">log in</a></li>
             </ul>
