@@ -21,8 +21,13 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function show()
+    public function index()
     {
         return view('pages.index');
-    }
+        //change this to welcome page to donors 
+    //     if ($prive == 1)
+    //     return view('pages.index');
+    //     else if ($prive == 2 )
+    //     return view ('');
+     }
 }

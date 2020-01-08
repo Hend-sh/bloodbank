@@ -4,16 +4,11 @@
       #carouselExampleControls{ height:500; width:1113 !important} 
       </style>
       <title>Blood Bank</title>
-      <link rel="stylesheet" href="bootstrap.min.css">
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
      </head>
      
   
-<<<<<<< HEAD
   <body style="background-color:#F8F8FF;">
-=======
-  <body style="background-color:#F8F8FF	;">
->>>>>>> 5016620c03a83ac1ce6aa33beeb603052e5568c5
   
   
     <nav style=" background: darkred !important" class="navbar navbar-expand-lg navbar-dark bg-dark ">
@@ -24,11 +19,12 @@
   
       <div class="collapse navbar-collapse" id="navbarColor02">
             <ul class="navbar-nav mr-auto">
-              <li class="nav-item "> <a class="nav-link" href="{{url('index')}}">Home </a></li>
+              <li class="nav-item "> <a class="nav-link" href="{{url('/')}}">Home </a></li>
               <li class="nav-item"> <a class="nav-link" href="blood_bank.php">blood bank</a> </li>
               <li class="nav-item"><a class="nav-link" href="Donor.php">Donors</a></li>
               <li class="nav-item"><a class="nav-link" href="contact-us.php">contuct us</a></li>
               <li class="nav-item active"> <a class="nav-link" href="{{url('login')}}">log in</a></li>
+              <li class="nav-item active"> <a class="nav-link" href="{{url('register')}}">Signup</a></li>              
             </ul>
             <form class="form-inline my-2 my-lg-0">
               <input class="form-control mr-sm-2" type="text" placeholder="Search">
