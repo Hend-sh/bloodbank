@@ -82,8 +82,8 @@
                                             <label for="prive" class="col-md-4 col-form-label text-md-right">{{ __('type') }}</label>
                 
                                             <div class="col-md-6">
-                                                <input id="password" type="radio" class="form-control @error('prive') is-invalid @enderror" name="prive" value ="1" > Donor
-                                                <input id="password" type="radio" class="form-control @error('prive') is-invalid @enderror" name="prive"  value="2" > Blood Bank
+                                                <input id="password" type="radio" class=" @error('prive') is-invalid @enderror" name="prive" value ="1" > Donor
+                                                <input id="password" type="radio" class=" @error('prive') is-invalid @enderror" name="prive"  value="2" > Blood Bank
                                                 
                                                 @error('prive')
                                                     <span class="invalid-feedback" role="alert">
