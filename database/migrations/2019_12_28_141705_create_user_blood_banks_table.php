@@ -13,14 +13,15 @@ class CreateUserBloodBanksTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_blood_banks', function (Blueprint $table) {
+        Schema::create('user_blood_banks', function (Blueprint $table) 
+        {
             $table->bigIncrements('blood_id');
             $table->string('blood_bank_name');
             $table->boolean('active')->default(0); 
             $table->integer('city_number');
             $table->string('location');           
             $table->integer('user_id');            
-            $table->timestamps();
+            $table->timestamps();                 
         });
     }
 

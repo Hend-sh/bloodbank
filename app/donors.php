@@ -17,4 +17,9 @@ class donors extends Model
         return $this->hasOne('App\City');
     }
     
+    public function Nationality()
+    {
+        return $this->hasOne('App\Nationality');
+    }
+    
 }

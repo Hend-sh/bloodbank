@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use app\donors;
-class donorsController extends Controller
+
+class Vbloodbank extends Controller
 {
     //
     public function show()
     {
-        return view('pages.Donor'); 
+        return view('pages.Vbloodbank');
     }
     public function list()
     {

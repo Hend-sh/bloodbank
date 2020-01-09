@@ -5,7 +5,11 @@
       </style>
       <title>Blood Bank</title>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-     </head>
+   
+   
+      <!-- <link rel="stylesheet" href="bootstrap.min.css"> -->
+      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
      
   
   <body style="background-color:#F8F8FF;">
@@ -21,8 +25,13 @@
             <ul class="navbar-nav mr-auto">
               <li class="nav-item "> <a class="nav-link" href="{{url('/')}}">Home </a></li>
               <li class="nav-item"> <a class="nav-link" href="blood_bank.php">blood bank</a> </li>
+<<<<<<< HEAD
               <li class="nav-item"><a class="nav-link" href="Donor.php">Donors</a></li>
               <li class="nav-item"><a class="nav-link" href="{{url('/contact')}}">contact us</a></li>
+=======
+              <li class="nav-item"><a class="nav-link" href="Donor.blade.php">Donors</a></li>
+              <li class="nav-item"><a class="nav-link" href="contact-us.php">contuct us</a></li>
+>>>>>>> c340cf0a9ae267deb586f5bfc8531eef0e1bc41b
               <li class="nav-item active"> <a class="nav-link" href="{{url('login')}}">log in</a></li>
               <li class="nav-item active"> <a class="nav-link" href="{{url('register')}}">Signup</a></li>              
             </ul>
