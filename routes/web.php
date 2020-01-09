@@ -11,12 +11,11 @@
 |
 */
 
-/*Route::get('/', function () {
-    return view('layouts.app');
-});*/
-//Route::get('/','HomeController@show');
+
 Auth::routes();
-
+route::get('/contact',function () {
+    return view('Contact');
+});
 Route::get('/', 'HomeController@index')->name('home');
-
+Route::post('/Cstore', 'ContactusController@store')->name('contactus-store');
 Route::get('/donor','donorsController@show');
