@@ -6,7 +6,16 @@ Route::get('/donors', 'DonorController@index');
 Route::get('/donors/create','DonorController@create');
 Route::get('/donors/{id}','DonorController@show');
 Route::post('/donors','DonorController@store');
-
+Route::any('/search',search(){
+    $inp=Input::get('inp');
+    $donor=Ddonor::where('name','LIKE','%','$inp','%')->orwhere('age','LIKE','%','$inp','%')
+    ->orwhere('bloodtype','LIKE','%','$inp','%')->orwhere('phone_number','LIKE','%','$inp','%')
+    ->orwhere('city','LIKE','%','$inp','%')->orwhere('email','LIKE','%','$inp','%')->get();
+    if(count($donor)>0)
+        return view('bloodbank.search')->withdetails($donor)->withQuery($inp);
+        else return view('bloodbank.search')->withMessage('No Details Found');
+    
+});
 
 
 

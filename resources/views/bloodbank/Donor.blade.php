@@ -3,6 +3,25 @@
 
 @section('content')
 
+<style>
+    th{color:white;
+        background-color:darkred;
+    }
+tr:nth-child(even){
+    background-color:#dddddd;
+}
+</style>
+<form action="/search" method="post" role="search">
+@csrf
+<div class="row mt-5">
+    
+               <div class="col-md-3">
+                  <button class="btn btn-secondary btn-md btn-block" type="submit">Search</button>
+                </div>
+              <div class="col-md-9 "><input type="text" class="form-control" placeholder="Search" name='inp'>
+            </div>
+</div>
+            </form>
 <table class="table mt-5 ">
 <thead>
 <tr>
