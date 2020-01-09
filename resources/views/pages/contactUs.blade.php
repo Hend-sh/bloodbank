@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.main')
 @section('content')
 
 
@@ -48,7 +48,7 @@
                                 </div>
 
                                 <div class="text-center">
-                                    <input style=" background: darkred !important" type="submit" value="Send" class="btn   btn-block rounded-0 py-2">
+                                    <input style=" background: darkred !important" type="submit" value="Send" class="btn btn-block rounded-0 py-2 text-white ">
                                 </div>
                             </div>
 
