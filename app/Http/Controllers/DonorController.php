@@ -31,9 +31,9 @@ class DonorController extends Controller
         $donor->city=request('city');
         $donor->phone_number=request('phone_number');
         $donor->email=request('email');
-       $donor->save();
+        $donor->save();
 
-       $donors = Ddonor::all();
+        $donors = Ddonor::all();
         
        return view('bloodbank.Donor', compact('donors'));
    }
