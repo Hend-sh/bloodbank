@@ -24,13 +24,40 @@
   
       <div class="collapse navbar-collapse" id="navbarColor02">
             <ul class="navbar-nav mr-auto">
-                    
-              <li class="nav-item "> <a class="nav-link" href="{{url('index')}}">Home </a></li>
-              <li class="nav-item"> <a class="nav-link" href="{{url('/vbloodbank')}}">blood bank</a> </li>
-              <li class="nav-item"><a class="nav-link" href="{{url('/donors')}}">Donors</a></li>
-              <li class="nav-item"><a class="nav-link" href="{{url('/contact')}}">contuct us</a></li>
-              <li class="nav-item "> <a class="nav-link" href="{{url('/register')}}">Register</a></li>
-              <li class="nav-item "> <a class="nav-link" href="{{url('/login')}}">log in</a></li>
+
+                  <!-- Authentication Links -->
+                 @guest
+                            <li class="nav-item "> <a class="nav-link" href="{{url('index')}}">Home </a></li>
+                            <li class="nav-item"> <a class="nav-link" href="{{url('/vbloodbank')}}">blood bank</a> </li>
+                            <li class="nav-item"><a class="nav-link" href="{{url('/donors')}}">Donors</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{url('/contact')}}">contuct us</a></li>
+                            <li class="nav-item "> <a class="nav-link" href="{{url('/register')}}">Register</a></li>
+                            <li class="nav-item "> <a class="nav-link" href="{{url('/login')}}">log in</a></li>
+                        @else
+                        <li class="nav-item "> <a class="nav-link" href="{{url('/users')}}">Home </a></li>
+                        <li class="nav-item"> <a class="nav-link" href="{{url('/vbloodbank')}}">blood bank</a> </li>
+                        <li class="nav-item"><a class="nav-link" href="{{url('/donors')}}">Donors</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{url('/contact')}}">contuct us</a></li>         
+                        <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="{{url('/users')}}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>              
+                @endguest      
+             
+             
             </ul>
             <form class="form-inline my-2 my-lg-0">
               <input class="form-control mr-sm-2" type="text" placeholder="Search">

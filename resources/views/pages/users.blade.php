@@ -33,7 +33,6 @@
 //     {{ $user->user}}
 ?> -->
 
-<hr>
         <table class="table text-center table-Active" style="width:50rem;  background-color:white;" id="user">        
           <tr style=" background: darkred !important" class="text-white">
           <th>user name</th>

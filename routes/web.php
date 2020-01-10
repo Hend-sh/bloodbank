@@ -29,9 +29,9 @@ Route::post('/donors','DonorController@store');
 // });
 
 
-Route::get('/users','userController@show');
-Route::post('/users','userController@store');
-Route::get('/users/{id}','userController@delete');
+Route::get('/users','userController@show')->middleware('auth');
+Route::post('/users','userController@store')->middleware('auth');
+Route::get('/users/{id}','userController@delete')->middleware('auth');
 
 
 Route::get('/','HomeController@show');

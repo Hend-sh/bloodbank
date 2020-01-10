@@ -26,7 +26,7 @@
             <ul class="navbar-nav mr-auto">
                    
                       
-            <li class="nav-item "> <a class="nav-link" href="{{url('index')}}">Home </a></li>
+              <li class="nav-item "> <a class="nav-link" href="{{url('/users')}}">Home </a></li>
               <li class="nav-item"> <a class="nav-link" href="{{url('/vbloodbank')}}">blood bank</a> </li>
               <li class="nav-item"><a class="nav-link" href="{{url('/donors')}}">Donors</a></li>
               <li class="nav-item"><a class="nav-link" href="{{url('/contact')}}">contuct us</a></li>
@@ -42,7 +42,7 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle"  href="{{url('/users')}}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
@@ -75,7 +75,6 @@
                        <a href="blood_bank_donors.php"><button type="button"  style="width:20rem; background: darkred !important" class="btn btn-secondary m-1 p-3 background: darkred !important">Donors</button></a> 
                        <a href="blood_bank_group.php"><button type="button"  style="width:20rem; background: darkred !important" class="btn btn-secondary m-1 p-3 background: darkred !important">Blood group</button></a> 
                        <a href="blood_bank_user.php"><button type="button"  style="width:20rem; background: darkred !important" class="btn btn-secondary m-1 p-3 background: darkred !important">Users</button></a> 
-                       <a href="logout.php"><button type="button"  style="width:20rem; background: darkred !important" class="btn btn-secondary m-1 p-3 ">Log out</button></a> 
                </div>
         </div>  
    
