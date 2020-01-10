@@ -14,6 +14,6 @@ class Vbloodbank extends Controller
     public function list()
     {
         $listDonors = donors::all();
-        return view('')
+        return view('');
     }
 }

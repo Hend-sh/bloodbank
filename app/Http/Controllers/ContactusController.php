@@ -9,12 +9,12 @@ class ContactusController extends Controller
 {
 
     public function store(){
-      /*  $request->validate([
-      'name' => ['required'],
-      'email' => ['required'],
-        'message' => ['required'],
+       request()->validate([
+      'name' => 'required',
+      'email' => 'required',
+        'message' => 'required',
 
-        ]);*/
+        ]);
         $Contact = new Contactus;
         $Contact->name = request('name');
         $Contact->email = request('email');

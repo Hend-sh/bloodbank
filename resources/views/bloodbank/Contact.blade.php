@@ -4,12 +4,19 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 
 <div class="container">
+    @if($errors->count())
+    <div class="alert alert-danger">
+        <ul> 
+            @foreach($errors->all() as $error)
+               <li> {{$error}}
+            @endforeach
+        </ul>
+    </div>
+    @endif
 	<div class="row justify-content-center mt-5">
 		<div class="col-12 col-md-8 col-lg-6 pb-5">
 
-
                     <!--Form with header-->
-
                     <form action="{{route('contactus-store')}}" method="post">
                         @csrf
                         <div class="card border rounded-0">

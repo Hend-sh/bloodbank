@@ -11,7 +11,7 @@ tr:nth-child(even){
     background-color:#dddddd;
 }
 </style>
-<form action="/search" method="post" role="search">
+<form action="{{url('/donors')}}" method="post" role="search">
 @csrf
 <div class="row mt-5">
     
