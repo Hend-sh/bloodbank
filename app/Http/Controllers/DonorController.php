@@ -7,7 +7,7 @@ use App\Ddonor;
 class DonorController extends Controller
 {
 
-    public function index()
+    public function show()
     {
         $donors = Ddonor::all();
         
@@ -31,10 +31,12 @@ class DonorController extends Controller
         $donor->city=request('city');
         $donor->phone_number=request('phone_number');
         $donor->email=request('email');
-       $donor->save();
+        $donor->save();
 
-       return "thanks, your donate has been added";
-    }
+        $donors = Ddonor::all();
+        
+       return view('bloodbank.Donor', compact('donors'));
+   }
   
 }
 
