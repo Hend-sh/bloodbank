@@ -29,7 +29,8 @@
               <li class="nav-item"> <a class="nav-link" href="{{url('/vbloodbank')}}">blood bank</a> </li>
               <li class="nav-item"><a class="nav-link" href="{{url('/donors')}}">Donors</a></li>
               <li class="nav-item"><a class="nav-link" href="{{url('/contact')}}">contuct us</a></li>
-              <li class="nav-item active"> <a class="nav-link" href="{{url('/login')}}">log in</a></li>
+              <li class="nav-item "> <a class="nav-link" href="{{url('/register')}}">Register</a></li>
+              <li class="nav-item "> <a class="nav-link" href="{{url('/login')}}">log in</a></li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
               <input class="form-control mr-sm-2" type="text" placeholder="Search">
