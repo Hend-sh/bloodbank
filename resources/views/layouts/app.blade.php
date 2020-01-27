@@ -25,10 +25,10 @@
             <ul class="navbar-nav mr-auto">
               <li class="nav-item "> <a class="nav-link" href="{{url('/')}}">Home </a></li>
               <li class="nav-item"> <a class="nav-link" href="blood_bank.php">blood bank</a> </li>
-              <li class="nav-item"><a class="nav-link" href="{{url('/donors')}}">Donors</a></li>
+              <li class="nav-item"><a class="nav-link" href="{{url('/donor/show')}}">Donors</a></li>
+              <li class="nav-item"><a class="nav-link" href="{{url('/patient')}}">Patient</a></li>              
               <li class="nav-item"><a class="nav-link" href="{{url('/contact')}}">contact us</a></li>
               <li class="nav-item active"> <a class="nav-link" href="{{url('login')}}">log in</a></li>
-              <li class="nav-item active"> <a class="nav-link" href="{{url('register')}}">Signup</a></li>              
             </ul>
             <form class="form-inline my-2 my-lg-0">
               <input class="form-control mr-sm-2" type="text" placeholder="Search">

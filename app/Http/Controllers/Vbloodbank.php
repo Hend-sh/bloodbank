@@ -16,10 +16,7 @@ class Vbloodbank extends Controller
     }
     public function store()
     {
-<<<<<<< HEAD
-        $listDonors = donors::all();
-        return view('');
-=======
+       
      
         $user =new UserBloodBank;
         $user->blood_bank_name= "Alkadra hospital";
@@ -32,6 +29,5 @@ class Vbloodbank extends Controller
         $users = UserBloodBank::all();
         
         return view('pages.Vbloodbank', compact('users'));
->>>>>>> c45bb3c518e3c033f01d2d8d7123370e16f00867
     }
 }

@@ -9,12 +9,12 @@ class donors extends Model
     //
     public function User()
     {
-        return $this->hasOne('App\User');
+        return $this->belongsTo('App\User');
     }
 
     public function City()
     {
-        return $this->hasOne('App\City');
+        return $this->belongsTo('App\City');
     }
     
     public function Nationality()

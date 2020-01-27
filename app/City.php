@@ -9,6 +9,10 @@ class City extends Model
     //
     public function donors()
     {
-        return $this->hasOne('App\donors');
+        return $this->hasMany('App\donors');
+    }
+    public function patients()
+    {
+        return $this->hasMany('App\patients');
     }
 }

@@ -18,10 +18,10 @@ class CreateDonorsTable extends Migration
             $table->integer('numNat');
             $table->string('gender');
             $table->string('dateBirth');
-            $table->string('bloodType');
+            $table->string('BloodKind');
             $table->integer('cityNum');
             $table->string('Location');
-            $table->string('HealthStatus');
+            $table->string('Health_Status');
             $table->timestamps();
         });
     }

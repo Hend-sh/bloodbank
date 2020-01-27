@@ -1,43 +1,109 @@
 <?php
-
 namespace App\Http\Controllers;
-
-use App\Ddonor;
-
+use App\donors;
+use App\User;
+use App\City;
+use App\Nationality;
+use App\Http\ControllersAuth;
+use DB;
 class DonorController extends Controller
 {
+   
+   public function show()
+   { 
+    //  $donor = donors::with('City')->get();
+    $users = User::with('donors','donors.City')->get();
+    $users = donors::with('City')->get();
+    dd($users);
 
-    public function show()
-    {
-        $donors = Ddonor::all();
-        
-        return view('bloodbank.Donor', compact('donors'));
-
-    }
-
+    // $donors = donors::with('User')->with('City')->get();
+       return view('pages.ShowDonors')->with([
+           'users' =>  $users,
+       ]);
+   }
 
     public function create()
     {
+        $cities = City::all ();
+        $nationality = Nationality::all ();
         
-        return view('bloodbank.create');
+        return view('pages.cdonor')->with('cities',$cities)->with('nationality',$nationality);
     }
-    public function store()
-    {
+  
 
-        $donor =new Ddonor;
-        $donor->name =request("name");
-        $donor->age=request('age');
-        $donor->bloodtype=request("bloodtype");
-        $donor->city=request('city');
-        $donor->phone_number=request('phone_number');
-        $donor->email=request('email');
-        $donor->save();
 
-        $donors = Ddonor::all();
-        
-       return view('bloodbank.Donor', compact('donors'));
+       public function store()
+       {        
+   
+    //    request()->validate([
+    //         'name' => 'required',
+    //         'phone' => 'required',
+    //           'email' => 'required',
+    //           'password' => 'required',
+    //           'numNat' => 'required',
+    //           'gender' => 'required',
+    //           'dateBirth' => 'required',
+    //           'BloodKind' => 'required',
+    //           'cityNum' => 'required',
+    //           'Location' => 'required',
+    //           'HealthStatus' => 'required',
+    //           ]);
+
+           $user =new User;
+           
+           $user->name =request('name');
+           $user->Phone=request('Phone');
+           $user->email=request('email');
+           $user->password=bcrypt(request('password'));
+           $user->prive=1;
+           $user->save();
+   
+
+           $donor = new donors;
+           $donor->numNat=request('Nationality');
+           $donor->gender=request('gender');       
+           $donor->dateBirth=request('dateBirth');  
+           $donor->BloodKind=request('BloodKind');                      
+           $donor->cityNum=request('cites');                      
+           $donor->Location=request('Location');                      
+           $donor->Health_Status=request('Health_Status');                      
+           $donor->user_id=user::max('id');
+           
+           $donor->save();
+         
+           return;
+      
+          }
+   public function LoginPage()
+   {
+       return view ('donorspage');
+   }
+   public function LoginPagee()
+   {
+       return view ('bloodbankpage');
    }
   
+   public function edit($id)
+   {
+       return view('donorspage',  [
+           'donors' => donors::all(),
+           'user' => User::find($id)
+       ]);
+   }
+
+   public function update($id)
+   {
+
+       $donors = donors::find($id);
+
+       $donors->name = request('name');
+       $donors->price = request('price');
+       $donors->description = request('description');
+       $donors->save();
+
+       return redirect('admin/products');
+   }
+      
 }
 
 ?>

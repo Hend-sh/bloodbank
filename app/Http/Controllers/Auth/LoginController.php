@@ -24,8 +24,17 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/users';
-
+     
+    //protected $redirectTo = '/users';
+    public function redirectTo()
+    {
+        if (auth()->user()->prive === 1) {
+         return'/donorspage';
+        } elseif (auth()->user()->prive === 2) {
+            return '/bloodbankpage';            
+        
+        }
+    }
     /**
      * Create a new controller instance.
      *

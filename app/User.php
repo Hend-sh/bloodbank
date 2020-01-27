@@ -11,7 +11,7 @@ class User extends Authenticatable
     use Notifiable;
   public function donors()
     {
-        return $this->hasOne('App\donors');
+        return $this->belongsTo('App\donors');
     }
     public function UserBloodBank()
     {

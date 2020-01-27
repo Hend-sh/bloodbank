@@ -29,14 +29,15 @@
                  @guest
                             <li class="nav-item "> <a class="nav-link" href="{{url('index')}}">Home </a></li>
                             <li class="nav-item"> <a class="nav-link" href="{{url('/vbloodbank')}}">blood bank</a> </li>
-                            <li class="nav-item"><a class="nav-link" href="{{url('/donors')}}">Donors</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{url('/donor/show')}}">Donors</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{url('/patient')}}">Patient</a></li>                                          
                             <li class="nav-item"><a class="nav-link" href="{{url('/contact')}}">contuct us</a></li>
-                            <li class="nav-item "> <a class="nav-link" href="{{url('/register')}}">Register</a></li>
                             <li class="nav-item "> <a class="nav-link" href="{{url('/login')}}">log in</a></li>
                         @else
                         <li class="nav-item "> <a class="nav-link" href="{{url('/users')}}">Home </a></li>
                         <li class="nav-item"> <a class="nav-link" href="{{url('/vbloodbank')}}">blood bank</a> </li>
-                        <li class="nav-item"><a class="nav-link" href="{{url('/donors')}}">Donors</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{url('/donor/show')}}">Donors</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{url('/patient')}}">Patient</a></li>                                      
                         <li class="nav-item"><a class="nav-link" href="{{url('/contact')}}">contuct us</a></li>         
                         <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="{{url('/users')}}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
