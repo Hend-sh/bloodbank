@@ -30,7 +30,7 @@
                             <li class="nav-item "> <a class="nav-link" href="{{url('index')}}">Home </a></li>
                             <li class="nav-item"> <a class="nav-link" href="{{url('/vbloodbank')}}">blood bank</a> </li>
                             <li class="nav-item"><a class="nav-link" href="{{url('/donor/show')}}">Donors</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{url('/patient')}}">Patient</a></li>                                          
+                            <li class="nav-item"><a class="nav-link" href="{{url('/patient/show')}}">Patient</a></li>                                          
                             <li class="nav-item"><a class="nav-link" href="{{url('/contact')}}">contuct us</a></li>
                             <li class="nav-item "> <a class="nav-link" href="{{url('/login')}}">log in</a></li>
                         @else

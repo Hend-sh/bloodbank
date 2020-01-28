@@ -15,6 +15,15 @@ class patientContoller extends Controller
         $BloodType = BloodType::all();
       return view('paitent')->with('cities',$cities)->with('BloodType',$BloodType);
     }
+
+    public function show()
+    {
+        $patient = patient :: with('City')->get();        
+           return view('ShowPaitent')->with([
+              'patient' => $patient,
+           ]);
+    }
+
     public function store(){
 
         request()->validate([
@@ -28,12 +37,16 @@ class patientContoller extends Controller
          $patient = new patient;
          $patient->phone_number = request('phone_number');
          $patient->address = request('address');
-         $patient->city_Num = request('cites');
+         $patient->city_id = request('cites');
          $patient->blood_type = request('blood_type');
          $patient->type = request('type');         
          $patient->save();
      
-     return back();
+         $patient = patient::with('City')->get();
+         return view('ShowPaitent')->with([
+             'patient' =>  $patient,
+         ]);
+     //return back();
      
      }
  

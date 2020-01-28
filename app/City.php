@@ -11,7 +11,7 @@ class City extends Model
     {
         return $this->hasMany('App\donors');
     }
-    public function patients()
+    public function patient()
     {
         return $this->hasMany('App\patients');
     }

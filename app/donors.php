@@ -19,7 +19,7 @@ class donors extends Model
     
     public function Nationality()
     {
-        return $this->hasOne('App\Nationality');
+        return $this->belongsTo('App\Nationality');
     }
     
 }

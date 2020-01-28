@@ -51,11 +51,11 @@
 
                             <div class="col-md-6">
                             <select name="cites" class="form-control @error('cites') is-invalid @enderror">                                            
-                             @foreach($cities as $city)-->
-                                    <option value = "{{$city->city_Num}}">{{$city->CityName}} </option>
+                             @foreach($cities as $city)
+                                    <option value = "{{$city->id}}">{{$city->CityName}} </option>
                              @endforeach 
                             </select>                            
-                                @error('Phone')
+                                @error('cites')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

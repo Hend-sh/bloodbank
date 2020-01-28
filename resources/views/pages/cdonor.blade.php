@@ -94,7 +94,7 @@
                             <div class="col-md-6">
                             <select name="cites" class="form-control @error('cites') is-invalid @enderror">                                            
                              @foreach($cities as $city)
-                                    <option value = "{{$city->cityNum}}">{{$city->CityName}} </option>
+                                    <option value = "{{$city->id}}">{{$city->CityName}} </option>
                              @endforeach 
                             </select>                            
                                 @error('cites')
@@ -133,7 +133,7 @@
                                 <div class="col-md-6">
                                 <select name="Nationality" class="form-control @error('Nationality') is-invalid @enderror">                                            
                                     @foreach($nationality as $nat)
-                                    <option value = "{{$nat->numNat}}">{{$nat->Nationality}} </option>
+                                    <option value = "{{$nat->id}}">{{$nat->Nationality}} </option>
                                     @endforeach 
                                 </select>                            
                                     @error('Nationality')

@@ -9,6 +9,6 @@ class Nationality extends Model
     //
     public function donors()
     {
-        return $this->hasOne('App\donors');
+        return $this->hasMany('App\donors');
     }
 }

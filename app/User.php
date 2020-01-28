@@ -9,10 +9,12 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
     use Notifiable;
+    
   public function donors()
     {
-        return $this->belongsTo('App\donors');
+        return $this->hasOne('App\donors');
     }
+    
     public function UserBloodBank()
     {
         return $this->hasOne('App\UserBloodBank');

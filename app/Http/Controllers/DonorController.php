@@ -11,17 +11,23 @@ class DonorController extends Controller
    
    public function show()
    { 
-    //  $donor = donors::with('City')->get();
+       
+    $cities = City :: all();
     $users = User::with('donors','donors.City')->get();
-    $users = donors::with('City')->get();
-    dd($users);
-
-    // $donors = donors::with('User')->with('City')->get();
+    // dd($users);
+    
        return view('pages.ShowDonors')->with([
            'users' =>  $users,
+          'cities' => $cities,
        ]);
    }
+   public function edit($id)
+   {
 
+    $user = User::with('donors','donors.City')->get();    
+
+       return view('donorspage')->with('user',$user);
+   }
     public function create()
     {
         $cities = City::all ();
@@ -35,19 +41,19 @@ class DonorController extends Controller
        public function store()
        {        
    
-    //    request()->validate([
-    //         'name' => 'required',
-    //         'phone' => 'required',
-    //           'email' => 'required',
-    //           'password' => 'required',
-    //           'numNat' => 'required',
+       request()->validate([
+            'name' => 'required',
+       //     'Phone' => 'required',
+              'email' => 'required',
+          //    'password' => 'required',
+    //           'nationality_id' => 'required',
     //           'gender' => 'required',
     //           'dateBirth' => 'required',
     //           'BloodKind' => 'required',
-    //           'cityNum' => 'required',
+    //           'city_id' => 'required',
     //           'Location' => 'required',
     //           'HealthStatus' => 'required',
-    //           ]);
+       ]);
 
            $user =new User;
            
@@ -60,18 +66,23 @@ class DonorController extends Controller
    
 
            $donor = new donors;
-           $donor->numNat=request('Nationality');
+           $donor->nationality_id=request('Nationality');
            $donor->gender=request('gender');       
            $donor->dateBirth=request('dateBirth');  
            $donor->BloodKind=request('BloodKind');                      
-           $donor->cityNum=request('cites');                      
+           $donor->city_id=request('cites');                      
            $donor->Location=request('Location');                      
            $donor->Health_Status=request('Health_Status');                      
            $donor->user_id=user::max('id');
            
            $donor->save();
-         
-           return;
+
+
+        $users = User::with('donors','donors.City')->get();
+       return view('pages.ShowDonors')->with([
+           'users' =>  $users,
+       ]);
+           
       
           }
    public function LoginPage()

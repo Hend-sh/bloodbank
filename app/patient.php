@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class patient extends Model
 {
     //
-    public function city()
+   
+    public function City()
     {
-        return $this->hasOne('App\city');        
+        return $this->belongsTo('App\City');
     }
 }

@@ -1,6 +1,5 @@
 
 @extends('layouts.main')
-
 @section('content')
 
 <style>
@@ -20,48 +19,81 @@ tr:nth-child(even){
 @csrf
 <div class="row mt-5">
     
-               <div class="col-md-3">
-                  <button class="btn btn-secondary btn-md btn-block" type="submit">Search</button>
+               <div class="col-md-2">
+                  <button type="submit" class="btn btn-secondary btn-md btn-block" >Search</button>
                 </div>
-              <div class="col-md-9 "><input type="text" class="form-control" placeholder="Search" name="inp">
+                {{--  <div class="col-md-4"><input type="text" class="form-control" placeholder="Search" name="q">
+            </div>    --}}
+            <div class="col-md-4">
+                <select  class="form-control" name = "q">
+                        <option value = "A+">A+ </option>
+                        <option value = "A-">A- </option>
+                        <option value = "B+">B+ </option>
+                        <option value = "B-">B- </option>
+                        <option value = "O+">O+ </option>
+                        <option value = "O-">O- </option>
+                        <option value = "AB+">AB+ </option>
+                        <option value = "AB-">AB- </option>
+                </select>  
             </div>
+            {{--  <div class="col-md-4">
+            <select name="qqq" class="form-control">                                            
+                    @foreach($cities as $city)
+                           <option value = "{{$city->id}}">{{$city->CityName}} </option>
+                    @endforeach 
+                   </select>   
+                </div>  --}}
 </div>
             </form>
-<table class="table mt-5 ">
-<thead>
-<tr>
-<th>Name</th>
-<th>Blood Type</th>
-<th>Phone Number</th>
-<th>City</th>
-
-</tr>
-</thead>
+{{--  <table class="table mt-5 ">  --}}
 
 
-@foreach($users as $user)
-<tr>
-<td> {{$user->name}} </td>
-<td> {{$user->donors->BloodKind}} </td>
-<td> {{$user->Pone}} </td>
-{{--  @if(dd($donor->City))  --}}
-<td>{{$user->CityName}} </td>
-{{--  @endif  --}}
-{{--  <td>{{$donor->City->CityName}} </td>  --}}
-</tr>
-  @endforeach
+  <div>
+        <table class="table table-striped">   
+                <thead>
+                        <tr>
+                           
+                  <th>Name</th>
+                  <th>Blood Type</th>
+                  <th>Phone Number</th>
+                  <th>City</th>
+                        </tr>
+                    </thead>             
+         @if(isset($details))
+        {{--  <p> The Search results for your query <b> {{ $query }} </b> are :</p>
+        <h2>Sample User details</h2>  --}}
+        <table class="table table-striped">
+        
+        <tbody>
+            @foreach($details as $user)
+            <tr>
+               
+                    <td> {{$user->name}} </td>
+                    <td> {{$user->donors->BloodKind}} </td>
+                    <td> {{$user->Phone}} </td>
+                    <td>{{$user->donors->City->CityName	}} </td>
+                    
+                
+                
+            </tr>
+            @endforeach
+        </tbody>
+        @else
+        <tbody>
+        @foreach($users as $user)
+        <tr>
+        <td> {{$user->name}} </td>
+        <td> {{$user->donors->BloodKind}} </td>
+        <td> {{$user->Phone}} </td>
+        <td>{{$user->donors->City->CityName	}} </td>
+        
+        </tr>
+          @endforeach 
+    </tbody>
+    </table>
+    @endif
+</div>
 
-{{--  
-@foreach($users as $user)
-<tr>
-<td> {{$user->name}} </td>
-@if($user->donors)
-<td> {{$user->donors->BloodKind}} </td>
-<td> {{$user->Phone}} </td>
-<td>{{$user->City->CityName}} </td>
-@endif
-</tr>
-  @endforeach  --}}
 </table>
 
 @endsection 
